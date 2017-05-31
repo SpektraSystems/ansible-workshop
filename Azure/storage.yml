@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Create storage account
+    azure_rm_storageaccount:
+      resource_group: changemerg
+      name: changemestor
+      account_type: Standard_LRS

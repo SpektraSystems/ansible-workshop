@@ -1,0 +1,32 @@
+---
+- hosts: all
+  tasks:
+  - name: Create security group that allows SSH
+    azure_rm_securitygroup:
+     resource_group: changemerg
+     name: secgroup001
+     rules:
+       - name: SSH
+         protocol: Tcp
+         destination_port_range: 22
+         access: Allow
+         priority: 101
+         direction: Inbound
+       - name: http
+         protocol: Tcp
+         destination_port_range: 80
+         access: Allow
+         priority: 102
+         direction: Inbound
+         - name: http_custom
+         protocol: Tcp
+         destination_port_range: 8080
+         access: Allow
+         priority: 102
+         direction: Inbound
+         - name: https_custom
+         protocol: Tcp
+         destination_port_range: 8443
+         access: Allow
+         priority: 102
+         direction: Inbound
