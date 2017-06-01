@@ -13,25 +13,11 @@ yum clean all
 ########################################
 
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-yum install -y python-setuptools
-yum install -y python-daemon
-yum install -y pystache
-yum install -y python-ecdsa
-yum install -y python-paramiko
-yum install -y python-keyczar
-yum install -y python-crypto
-yum install -y python-httplib
-yum install git -y
-yum install wget -y
-yum install sshpass -y
-yum install python-pip -y
-yum install python-wheel -y
-pip install --upgrade pip
+yum install -y python-setuptools python-daemon pystache python-ecdsa python-paramiko python-keyczar python-crypto python-httplib git wget sshpass python-pip python-wheel openssl-devel gcc
 
+pip install --upgrade pip
 pip install "pywinrm>=0.2.2"
 pip install setuptools --upgrade 
-yum install openssl-devel -y
-yum install gcc -y
 pip install azure==2.0.0rc6 --upgrade
 
 #Disable SSH Copy prompt#
