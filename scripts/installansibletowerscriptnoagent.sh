@@ -22,9 +22,9 @@ pip install azure==2.0.0rc6 --upgrade
 
 #Disable SSH Copy prompt#
 echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
-echo "PasswordAuthentication yes" >> /etc/ssh/ssh_config
+#echo "PasswordAuthentication yes" >> /etc/ssh/ssh_config
 
-echo 'demouser:demoPassword1!' | chpasswd
+#echo 'demouser:demoPassword1!' | chpasswd
 
 ## The following code generates SSH Keys and copies it to other hosts ##  
 #ssh-keygen -f $HOME/.ssh/id_rsa -t rsa -b 4096 -N ''
