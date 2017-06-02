@@ -15,11 +15,12 @@ yum clean all
 yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 yum install -y python-setuptools python-daemon pystache python-ecdsa python-paramiko python-keyczar python-crypto python-httplib git wget sshpass python-pip python-wheel openssl-devel gcc
 
+pip install "azure==2.0.0rc5"
 pip install --upgrade pip
 pip install "pywinrm>=0.2.2"
 pip install setuptools --upgrade 
 pip install azure==2.0.0rc6 --upgrade
-
+pip install packaging
 #Disable SSH Copy prompt#
 echo "StrictHostKeyChecking no" >> /etc/ssh/sshd_config
 #sed -i 's/PasswordAuthentication\ no/PasswordAuthentication\ yes/g' /etc/ssh/sshd_config
@@ -92,7 +93,8 @@ setenforce 0
 sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config
 cd /var/lib/awx/projects/
 git clone https://github.com/SpektraSystems/ansible-workshop.git
-str1=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 15 ; echo '')
+chown -R awx:awx ansible-workshop
+str1=$(head /dev/urandom | tr -dc a-z0-9 | head -c 15 ; echo '')
 str2=storg
 str3=$str2$str1
 
