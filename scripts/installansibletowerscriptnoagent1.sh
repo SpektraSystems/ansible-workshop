@@ -101,7 +101,8 @@ str3=$str2$str1
 
 find . -type f -name "*.yml" -exec sed -i 's/changemerg/'$3'/g' {} +
 find . -type f -name "*.yml" -exec sed -i 's/changemestor/'$str3'/g' {} +
-
+touch dout.txt
+awk 'BEGIN {print "<html><body><h1>Hello , This is a sample website for Ansible Workshop </h1></body></html>"}' dout.txt > /etc/ansible/index.html
 exit 0
 
 exit 0
