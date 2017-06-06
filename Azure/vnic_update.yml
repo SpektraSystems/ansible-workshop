@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+  - name: Update Public IP on NIC
+    azure_rm_networkinterface:
+     resource_group: changemerg
+     name: vm-linux-agent-nic-1
+     public_ip_name: publicip001
