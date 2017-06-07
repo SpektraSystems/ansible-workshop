@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
   - copy:
-     src: /root/credentials
+     src: /etc/ansible/credentials
      dest: /root/.azure/credentials
   - name: store User ID
     replace:
