@@ -5,4 +5,4 @@
     azure_rm_publicipaddress:
      resource_group: changemerg
      allocation_method: Dynamic
-     name: vm-client1-pip
+     name: vm-linux-client-pip-1
