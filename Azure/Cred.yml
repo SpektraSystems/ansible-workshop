@@ -1,6 +1,9 @@
 ---
 - hosts: all
   tasks:
+  - copy:
+     src: /root/credentials
+     dest: /root/.azure/credentials
   - name: store User ID
     replace:
      path: /root/.azure/credentials
